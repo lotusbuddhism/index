@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      var PostPreview = createClass({
+        render: function () {
+          const listItemStyle = { marginBottom: '10px', fontSize: '14px' };
+          const codeBlockStyle = { backgroundColor: '#f4f4f4', padding: '10px', borderRadius: '4px' };
+          const hrStyle = { margin: '20px 0', border: 'none', borderBottom: '1px solid #ddd' };
+          const quoteStyle = { marginLeft: '0', fontWeight: "100" };
+
+          return h('div', { style: { fontFamily: 'sans-serif', padding: '10px' } },
+            h('h3', { style: { color: '#333', fontWeight: '500' } }, 'Markdown Guide'),
+            h('div', {},
+              h('p', { style: listItemStyle }, 'Bold: **Bold Text**'),
+              h('p', { style: listItemStyle }, 'Italics:, *Italics Text'),
+              h('p', { style: listItemStyle }, 'Heading: ###### Heading'),
+              h('p', { style: listItemStyle }, 'LinkL: [Link Title](LINK_URL)'),
+              h('p', { style: listItemStyle }, 'Image: ![](IMAGE_URL)'),
+              h('p', { style: listItemStyle }, 'Blockquote: > Blockquote Text'),
+              h('p', { style: listItemStyle }, 'List:  - List Item'),
+              h('hr'),
+              h('blockquote', { style: quoteStyle }, '“Everything should be made as simple as possible, but not simpler” ~ Einstein'),
+            )
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate("article", PostPreview);
+      CMS.registerPreviewTemplate("faq", PostPreview);
+      CMS.registerPreviewTemplate("arguments", PostPreview);
+
+    </script>
+
+    <style>
+      .css-1bqupl5-ViewControls, .Pane2 {
+        display: none !important;
+      }
+      .Pane {
+        width: 100% !important;
+      }
+    </style>
+  </body>
+</html>

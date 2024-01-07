@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/images"
+public_folder: "/uploads"
+collections:
+  - name: "arguments"
+    label: "Arguments" 
+    folder: "content/arguments"
+    path: "{{slug}}/index"
+    media_folder: "images"
+    public_folder: "images"
+    create: true
+    fields:
+      - { label: "Breadcrumbs", name: "bread", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "External title", name: "outTitle", widget: "string" }
+      - { label: "Author (Leave empty to default to Safwan Darshams)", name: "author", widget: "string" , required: false }
+      - { label: "Body", name: "body", widget: "markdown",  buttons: ["bold", "italic", "link", "heading-five" , "quote", "bulleted-list"] }
+      - { label: "Further information", name: "further", widget: "text", required: false } 
+      - { label: "Weight", name: "weight", widget: "number", required: false  }
+      - { label: "URL", name: "slug", widget: "string", required: false }
+  - name: "article"
+    label: "Articles" 
+    folder: "content/article"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    fields:
+      - { label: "Breadcrumbs", name: "bread", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "External title", name: "outTitle", widget: "string" }
+      - { label: "Author (Leave empty to default to Safwan Darshams)", name: "author", widget: "string" , required: false }
+      - { label: "Body", name: "body", widget: "markdown",  buttons: ["bold", "italic", "link", "heading-five" , "quote", "bulleted-list"] }
+      - { label: "Further information", name: "further", widget: "text", required: false } 
+      - { label: "Weight", name: "weight", widget: "number", required: false  }
+      - { label: "URL", name: "slug", widget: "string", required: false }
+  - name: "faq"     
+    label: "FAQs" 
+    folder: "content/faq"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    fields:
+      - { label: "Breadcrumbs", name: "bread", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "External title", name: "outTitle", widget: "string" }
+      - { label: "Author (Leave empty to default to Safwan Darshams)", name: "author", widget: "string" , required: false }
+      - { label: "Body", name: "body", widget: "markdown",  buttons: ["bold", "italic", "link", "heading-five" , "quote", "bulleted-list"] }
+      - { label: "Further information", name: "further", widget: "text", required: false } 
+      - { label: "Weight", name: "weight", widget: "number", required: false  }
+      - { label: "URL", name: "slug", widget: "string", required: false }
+  - name: "quote"     
+    label: "Quotes" 
+    folder: "content/quote"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Byline", name: "byline", widget: "string" }
+      - { label: "Weight", name: "weight", widget: "number", required: false  }
+      - { label: "URL", name: "slug", widget: "string", required: false }
+
